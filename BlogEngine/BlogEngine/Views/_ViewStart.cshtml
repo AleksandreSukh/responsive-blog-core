@@ -1,0 +1,24 @@
+﻿@*@using PersonalWebsite.Controllers*@
+@{
+    Layout = "_Layout";
+}
+
+@*@{
+        var c = ViewContext.ActionDescriptor.RouteValues["Controller"];
+        if (c == "Home")
+        {
+            Layout = "_Layout";
+        }
+        else if (c == "Resume")
+        {
+            Layout = "_Layout_Resume";
+        }
+        else if (c == "Blog")
+        {
+            Layout = "_Layout_Blog";
+        }
+        else
+        {
+            //No layout
+        }
+    }*@
