@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlogEngine.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogEngine.Controllers
@@ -10,7 +11,8 @@ namespace BlogEngine.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var allPosts = DataRepository.GetAllPosts().OfType<PostPreviewModel>().ToArray();
+            return View(allPosts);
         }
 
         public IActionResult About()
